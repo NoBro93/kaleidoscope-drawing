@@ -31,6 +31,9 @@ public class Kaleidoscope extends PApplet {
   }
   public void draw() {
     options();
+    //testing
+    C8();
+    //testing
     if (gox2)
     	X2();
     if (goy2)
@@ -121,6 +124,25 @@ public class Kaleidoscope extends PApplet {
 	    line(mouseX,y2,pmouseX,py2);
 	    line(x2,mouseY,px2,pmouseY);
 	    line(x2,y2,px2,py2);
+	}
+  }
+  private void C8(){
+	int x2, y2, px2, py2; //could make class variables, but have to recalculate from mouse coordinates every time anyway
+	if (mousePressed && onScreen()) {
+	  	x2 = windowX - mouseX;
+	    px2 = windowX - pmouseX;
+	  	y2 = windowY - mouseY;
+	  	py2 = windowY - pmouseY;
+	  	
+	  	line(mouseX,mouseY,pmouseX,pmouseY);
+	    line(mouseX,y2,pmouseX,py2);
+	    line(x2,mouseY,px2,pmouseY);
+	    line(x2,y2,px2,py2);
+	    
+	    line(mouseY,mouseX,pmouseY,pmouseX);
+	    line(mouseY,x2,pmouseY,px2);
+	    line(y2,mouseX,py2,pmouseX);
+	    line(y2,x2,py2,px2);
 	}
   }
 }
